@@ -1,16 +1,16 @@
-import { objectType } from "nexus"
-import { Project } from "./project"
+import { objectType } from "nexus";
+import { Project } from "./project";
 
 export const Todo = objectType({
-  name: 'Todo',
+  name: "Todo",
   definition(t) {
-    t.implements('Node')
-    t.nonNull.relayGlobalId('id', {})
-    t.nonNull.string('title')
-    t.nonNull.boolean('done')
-    t.nonNull.field('project', {
+    t.implements("Node");
+    t.nonNull.relayGlobalId("id", {});
+    t.nonNull.string("title");
+    t.nonNull.boolean("done");
+    t.nonNull.field("project", {
       type: Project,
-      resolve: async () => ({} as any)
-    })
+      resolve: async () => ({} as any),
+    });
   },
- })
+});

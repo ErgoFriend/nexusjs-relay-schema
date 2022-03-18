@@ -1,13 +1,11 @@
-import {
-  makeSchema,
-} from 'nexus'
+import { makeSchema } from "nexus";
 import path from "path";
-import { plugins } from './plugins';
-import { Project } from './project';
-import { Todo } from './todo';
+import { plugins } from "./plugins";
+import { Project } from "./project";
+import { Todo } from "./todo";
 
 makeSchema({
-  types: [Todo,  Project],
+  types: [Todo, Project],
   plugins,
   features: {
     abstractTypeStrategies: {
@@ -19,4 +17,4 @@ makeSchema({
     schema: path.join(__dirname, "../schema.graphql"),
     typegen: path.join(__dirname, "../generated.d.ts"),
   },
-})
+});
